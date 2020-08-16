@@ -21,13 +21,12 @@
   </body>
 </html>
 <script>
-  
   function vercaptcha(){
     if (grecaptcha.getResponse() === '') {                            
         event.preventDefault();
-        alert('Please check the recaptcha');
+        alert('Please check the recaptcha!!!');
     } else {
       location.href("/");
     }
-    
+  }    
 </script>
