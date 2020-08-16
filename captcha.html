@@ -13,7 +13,7 @@
     <form action="https://octonalxx.github.io">
       <div id="html_element"></div>
       <br>
-      <input type="submit" value="Submit">
+      <input type="button" value="Submit" onclick="vercaptcha()"/> 
     </form>
     <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
         async defer>
@@ -21,12 +21,11 @@
   </body>
 </html>
 <script>
-  var form = document.getElementById('form');
-  form.addEventListener("submit", function(event){
-      if (grecaptcha.getResponse() === '') {                            
+  var vercaptcha = function() {
+    if (grecaptcha.getResponse() === '') {                            
         event.preventDefault();
         alert('Please check the recaptcha');
-      }
+    } else {
+      location.href("/")
     }
-  , false);
 </script>
