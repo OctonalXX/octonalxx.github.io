@@ -40,5 +40,7 @@
       return result ? result.pop() : ""
     }
     const status = getCookieValue("captcha");
-    
+    if (status !== "true") {
+        loaction.replace("/capcha.html")
+    }
 </script>
