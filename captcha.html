@@ -26,6 +26,7 @@
         event.preventDefault();
         alert('Please check the recaptcha!!!');
     } else {
+      document.cookie = "captcha=true; expires=1; path=/";
       location.replace("/");
     }
   }    
