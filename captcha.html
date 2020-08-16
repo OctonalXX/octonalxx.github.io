@@ -21,11 +21,11 @@
   </body>
 </html>
 <script>
-  function(vercaptcha) {
+  function vercaptcha(){
     if (grecaptcha.getResponse() === '') {                            
         event.preventDefault();
         alert('Please check the recaptcha');
     } else {
-      location.href("/")
+      location.href("/");
     }
 </script>
