@@ -1,3 +1,5 @@
 User-Agent: *
 Disallow: /s.html
 Disallow: /captcha.html
+Disallow: /s
+Disallow: /captcha
