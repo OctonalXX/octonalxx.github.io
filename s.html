@@ -15,3 +15,14 @@
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
 <script type="text/javascript"> var infolinks_pid = 3275342; var infolinks_wsid = 0; </script> <script type="text/javascript" src="//resources.infolinks.com/js/infolinks_main.js"></script>
+
+<script>
+    function getCookieValue(name) {
+      let result = document.cookie.match("(^|[^;]+)\\s*" + name + "\\s*=\\s*([^;]+)")
+      return result ? result.pop() : ""
+    }
+    const status = getCookieValue("captcha");
+    if (status !== "true") {
+        location.replace("/captcha.html")
+    }
+</script>
