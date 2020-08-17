@@ -21,22 +21,12 @@
   </body>
 </html>
 <script>
-  function timeadd(valt) { 
-    var now = new Date();
-    var time = now.getTime();
-    var expireTime = time + valt;
-    now.setTime(expireTime);
-    var tempExp = 'Wed, 31 Oct 2012 08:50:17 GMT';
-    return '+now.toGMTString()+';path=/';
-  }
-  
   function vercaptcha(){
     if (grecaptcha.getResponse() === '') {                            
         event.preventDefault();
         alert('Please check the recaptcha!!!');
     } else {
-      const expi = timeadd(86400)
-      document.cookie = "captcha=true; expires=expi; path=/";
+      document.cookie = "captcha=true; expires=3; path=/";
       location.replace("/");
     }
   }    
