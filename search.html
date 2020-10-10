@@ -17,14 +17,3 @@
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
-
-<script>
-    function getCookieValue(name) {
-      let result = document.cookie.match("(^|[^;]+)\\s*" + name + "\\s*=\\s*([^;]+)")
-      return result ? result.pop() : ""
-    }
-    const status = getCookieValue("captcha");
-    if (status !== "true") {
-        location.replace("/captcha.html")
-    }
-</script>
