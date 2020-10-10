@@ -18,14 +18,3 @@
 </script>
 
 <script data-ad-client="ca-pub-9068191072286862" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-<script>
-    function getCookieValue(name) {
-      let result = document.cookie.match("(^|[^;]+)\\s*" + name + "\\s*=\\s*([^;]+)")
-      return result ? result.pop() : ""
-    }
-    const status = getCookieValue("captcha");
-    if (status !== "true") {
-        location.replace("/captcha.html")
-    }
-</script>
