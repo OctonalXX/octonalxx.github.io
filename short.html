@@ -1,8 +1,3 @@
-<form onsubmit="genlink(lin)">
-  <label for="name">Link</label><br>
-  <input type="text" id="lin" name="lin" value="https://www.example.com"><br>
-  <input type="submit" value="Submit">
-</form> 
 <script>
 function genlink(orglink) {
 var url = "https://firebasedynamiclinks.googleapis.com/v1/shortLinks?key=AIzaSyCqLIz7972er_wR9S42F9TY5dwOB73eUhI";
@@ -28,3 +23,9 @@ var data = `{
 xhr.send(data);
 }
 </script>
+<form onsubmit="genlink(lin)">
+  <label for="name">Link</label><br>
+  <input type="text" id="lin" name="lin" value="https://www.example.com"><br>
+  <input type="submit" value="Submit">
+</form> 
+
