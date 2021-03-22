@@ -1,6 +1,11 @@
+<form onsubmit="genlink(lin)">
+  <label for="name">Link</label><br>
+  <input type="text" id="lin" name="lin" value="https://www.example.com"><br>
+  <input type="submit" value="Submit">
+</form> 
 <script>
-function shlink(key,dopref,linkorg) {
-var url = "https://firebasedynamiclinks.googleapis.com/v1/shortLinks?key=" + key;
+function genlink(orglink) {
+var url = "https://firebasedynamiclinks.googleapis.com/v1/shortLinks?key=AIzaSyCqLIz7972er_wR9S42F9TY5dwOB73eUhI";
 
 var xhr = new XMLHttpRequest();
 xhr.open("POST", url);
@@ -10,19 +15,16 @@ xhr.setRequestHeader("Content-Type", "application/json");
 xhr.onreadystatechange = function () {
    if (xhr.readyState === 4) {
       console.log(xhr.status);
-      var rep=xhr.responseText;
-   }
-   return rep
-};
+      console.log(xhr.responseText);
+   }};
 
 var data = `{
   "dynamicLinkInfo": {
-    "domainUriPrefix": `+dopref+`,
-    "link": `+linkorg+`
+    "domainUriPrefix": "https://shul.page.link",
+    "link": `+orglink+`
   }
 }`;
 
 xhr.send(data);
 }
-console.log(shlink("AIzaSyCqLIz7972er_wR9S42F9TY5dwOB73eUhI","https://shul.page.link","https://www.example.com"))
 </script>
