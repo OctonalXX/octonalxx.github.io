@@ -1,6 +1,6 @@
 <script>
 function shlink(key,dopref,linkorg) {
-var url = "https://firebasedynamiclinks.googleapis.com/v1/shortLinks?key="+key;
+var url = "https://firebasedynamiclinks.googleapis.com/v1/shortLinks?key=" + key;
 
 var xhr = new XMLHttpRequest();
 xhr.open("POST", url);
@@ -9,17 +9,18 @@ xhr.setRequestHeader("Content-Type", "application/json");
 
 xhr.onreadystatechange = function () {
    if (xhr.readyState === 4) {
+      console.log(xhr.status);
       return xhr.responseText
    }};
 
 var data = `{
   "dynamicLinkInfo": {
-    "domainUriPrefix": `+ dopref +`,
-    "link": `+ linkorg + `
+    "domainUriPrefix": `+dopref+`,
+    "link": `+linkorg`
   }
 }`;
 
 xhr.send(data);
 }
-console.log(shlink("AIzaSyCqLIz7972er_wR9S42F9TY5dwOB73eUhI","shul.page.link","https://example.com"))
+console.log(shlink("AIzaSyCqLIz7972er_wR9S42F9TY5dwOB73eUhI","https://shul.page.link","https://www.example.com"))
 </script>
