@@ -3,7 +3,6 @@
 <title>Magnet Link Generator</title>
 </head>
 <body>
-<h1>Magnet Link Generator</h1>
 <script type="text/javascript">
 function update()
 {
@@ -23,11 +22,20 @@ function update()
     }
     catch(e)
     {
-        alert("exception: " + e);
+        alert("Error: " + e);
     }
+}
+function copy(idl) {
+  var copyText = document.getElementById(idl);
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+  document.execCommand("copy");
+
 }
 </script>
 <div>
+        <h1>Magnet Link Generator</h1>
 	<form name="form" onsubmit="update(); return false;">
 		<label>Torrent Hash: <input id="hash" size="80"></label>
 		(Required)
@@ -36,9 +44,10 @@ function update()
 		(Custom Name)
 		<br>
 		<input type="submit" value="Generate">
-		<br>
+		<br><br>
 		<a>Magnet Link</a>: <input readonly="" id="link_text" size="80">
 		<br>
+                <input type="button" value="Copy" onclick="copy('link_text');">
 	</form>
 </div>
 
