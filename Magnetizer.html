@@ -19,7 +19,6 @@ function update()
             + "&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969"
             + "&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969"
             ;
-        document.getElementById("link").href = data;
         document.getElementById("link_text").value = data;
     }
     catch(e)
@@ -38,7 +37,7 @@ function update()
 		<br>
 		<input type="submit" value="Generate">
 		<br>
-		<a href="magnet:?xt=urn:btih:a41edb534281b10b75135cef8d96259ddee2e1ee&amp;dn=Magnetizer&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Fopentor.org%3A2710&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Ftracker.blackunicorn.xyz%3A6969&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&amp;tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969" id="link">Magnet Link</a>: <input readonly="" id="link_text" size="80">
+		<a>Magnet Link</a>: <input readonly="" id="link_text" size="80">
 		<br>
 	</form>
 </div>
