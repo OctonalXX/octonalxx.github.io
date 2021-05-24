@@ -1,0 +1,46 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Magnet Link Generator</title>
+</head>
+<body>
+<h1>Magnet Link Generator</h1>
+<script type="text/javascript">
+function update()
+{
+    try
+    {
+        var data = "magnet:"
+            + "?xt=urn:btih:" + document.getElementById("hash").value
+            + "&dn=" + encodeURIComponent(document.getElementById("name").value)
+            + "&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80"
+            + "&tr=udp%3A%2F%2Fopentor.org%3A2710"
+            + "&tr=udp%3A%2F%2Ftracker.ccc.de%3A80"
+            + "&tr=udp%3A%2F%2Ftracker.blackunicorn.xyz%3A6969"
+            + "&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969"
+            + "&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969"
+            ;
+        document.getElementById("link").href = data;
+        document.getElementById("link_text").value = data;
+    }
+    catch(e)
+    {
+        alert("exception: " + e);
+    }
+}
+</script>
+<div>
+	<form name="form" onsubmit="update(); return false;">
+		<label>Torrent Hash: <input id="hash" size="80"></label>
+		(Required)
+		<br>
+		<label>Label: <input id="name" size="80"></label>
+		(Custom Name)
+		<br>
+		<input type="submit" value="Generate">
+		<br>
+		<a href="magnet:?xt=urn:btih:a41edb534281b10b75135cef8d96259ddee2e1ee&amp;dn=Magnetizer&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Fopentor.org%3A2710&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Ftracker.blackunicorn.xyz%3A6969&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&amp;tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969" id="link">Magnet Link</a>: <input readonly="" id="link_text" size="80">
+		<br>
+	</form>
+</div>
+
+</body></html>
