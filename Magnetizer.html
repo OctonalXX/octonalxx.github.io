@@ -11,8 +11,8 @@ function update()
         var trackers = encodeURIComponent(document.getElementById("trackt").value);
         var trackers = trackers.replaceAll("%0A","&tr=");
         var trackers = "tr=" + trackers;
-        if (trackers.slice(-3) == "&tr=") {
-            trackers = trackers.slice(0,-3);
+        if (trackers.slice(-4) == "&tr=") {
+            trackers = trackers.slice(0,-4);
         }
         var data = "magnet:"
             + "?xt=urn:btih:" + document.getElementById("hash").value
