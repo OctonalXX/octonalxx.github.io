@@ -8,15 +8,17 @@ function update()
 {
     try
     {
+        var trackers = encodeURIComponent(document.getElementById("trackt").value);
+        var trackers = trackers.replaceAll("%0A","&tr=");
+        var trackers = "tr=" + trackers;
+        if (trackers.slice(-3) = "%0A") {
+            trackers = trackers.slice(0, -3);
+        }
         var data = "magnet:"
             + "?xt=urn:btih:" + document.getElementById("hash").value
             + "&dn=" + encodeURIComponent(document.getElementById("name").value)
-            + "&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80"
-            + "&tr=udp%3A%2F%2Fopentor.org%3A2710"
-            + "&tr=udp%3A%2F%2Ftracker.ccc.de%3A80"
-            + "&tr=udp%3A%2F%2Ftracker.blackunicorn.xyz%3A6969"
-            + "&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969"
-            + "&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969"
+            + "&"
+            + trackers
             ;
         document.getElementById("link_text").value = data;
     }
@@ -43,6 +45,16 @@ function copy(idl) {
 		<label>Label: <input id="name" size="80"></label>
 		(Custom Name)
 		<br>
+                <label>Trackers To Include:</label>
+                <br>
+<textarea id="trackt" rows="8" cols="50">
+udp://tracker.opentrackr.org:1337/announce
+udp://tracker.openbittorrent.com:6969
+udp://explodie.org:6969
+udp://p4p.arenabg.ch:1337/announce
+udp://9.rarbg.to:2800/announce
+udp://9.rarbg.me:2720/announce
+</textarea>     <br>
 		<input type="submit" value="Generate">
 		<br><br>
 		<a>Magnet Link</a>: <input readonly="" id="link_text" size="80">
