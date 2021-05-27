@@ -11,8 +11,8 @@ function update()
         var trackers = encodeURIComponent(document.getElementById("trackt").value);
         var trackers = trackers.replaceAll("%0A","&tr=");
         var trackers = "tr=" + trackers;
-        if (trackers.slice(-3) = "%0A") {
-            trackers = trackers.slice(0, -3);
+        if (trackers.slice(-3) == "%0A") {
+            trackers = trackers.slice(0,-3);
         }
         var data = "magnet:"
             + "?xt=urn:btih:" + document.getElementById("hash").value
@@ -24,7 +24,7 @@ function update()
     }
     catch(e)
     {
-        alert("Error: " + e);
+        console.log("Error: " + e);
     }
 }
 function copy(idl) {
