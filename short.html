@@ -23,9 +23,9 @@ var data = `{
 xhr.send(data);
 }
 </script>
-<form onsubmit="return genlink(lin)">
+<form>
   <label for="name">Link</label><br>
   <input type="text" id="lin" name="lin" value="https://www.example.com"><br>
-  <input type="submit" value="Submit">
+  <input type="submit" value="Submit" onsubmit="return genlink(lin)">
 </form> 
 
