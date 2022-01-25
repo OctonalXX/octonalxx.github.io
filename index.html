@@ -50,11 +50,13 @@ a:hover, a:active {
 ></script>
 <script>
 Sentry.init({
-  dsn: "https://c30525a0dc464bd78f500314e37834a5@o1126078.ingest.sentry.io/6166709",
+  dsn: "https://examplePublicKey@o0.ingest.sentry.io/0",
+  // this assumes your build process sets "npm_package_version" in the env
+  release: "my-project-name@" + process.env.npm_package_version,
+  integrations: [new Sentry.Integrations.BrowserTracing()],
 
-  // Set tracesSampleRate to 1.0 to capture 100%
-  // of transactions for performance monitoring.
-  // We recommend adjusting this value in production
+  // We recommend adjusting this value in production, or using tracesSampler
+  // for finer control
   tracesSampleRate: 1.0,
 });
 </script>
