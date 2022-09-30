@@ -62,3 +62,16 @@ a:hover, a:active {
 <script async src="https://cse.google.com/cse.js?cx=b0687d7845d814e14"></script>
 <div class="gcse-search"></div>
 <script async src="https://zink.tips/zwc.js?rid=632c5b8b6d4a18fe336b40f4&c=silver"></script>
+import * as Sentry from "@sentry/browser";
+import { BrowserTracing } from "@sentry/tracing";
+<script>
+Sentry.init({
+  dsn: "https://385dd49f503e42f798bf6ef1a8db861d@o4503900937125888.ingest.sentry.io/4503900942041088",
+  integrations: [new BrowserTracing()],
+
+  // Set tracesSampleRate to 1.0 to capture 100%
+  // of transactions for performance monitoring.
+  // We recommend adjusting this value in production
+  tracesSampleRate: 1.0,
+});
+</script>
